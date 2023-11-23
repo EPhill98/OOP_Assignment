@@ -1,0 +1,38 @@
+Please input the file pathname: 1h.txt
+
+> startNewDay|20-Feb-2023
+
+> createProject|P001|21-Feb-2023|15
+Done.
+
+> createProject|P001|23-Feb-2023|20
+Project already exists!
+
+> undo
+
+> createProject|P001|23-Feb-2023|20
+Done.
+
+> listProjects
+Project  Start Day    End Day      Team         
+P001     23-Feb-2023  14-Mar-2023  --           
+
+> createProject
+Insufficient command arguments!
+
+> createProject|P702
+Insufficient command arguments!
+
+> createProject|P702|1-Mar-2023
+Insufficient command arguments!
+
+> createProject|P702|1-Mar-2023|thirty
+Wrong number format for project duration!
+
+> createProject|P702|1-Mar-2023|30
+Done.
+
+> listProjects
+Project  Start Day    End Day      Team         
+P001     23-Feb-2023  14-Mar-2023  --           
+P702     1-Mar-2023   30-Mar-2023  --           

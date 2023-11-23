@@ -1,0 +1,54 @@
+Please input the file pathname: 1g.txt
+
+> startNewDay|20-Feb-2023
+
+> hire|Angel|14
+Done.
+
+> hire|Angel|21
+Employee already exists!
+
+> hire
+Insufficient command arguments!       
+
+> hire|Brian
+Insufficient command arguments!       
+
+> hire|Brian|ten
+Wrong number format for annual leaves!
+
+> hire|Brian|10
+Done.
+
+> listEmployees
+Angel (Entitled Annual Leaves: 14 days)
+Brian (Entitled Annual Leaves: 10 days)
+
+> setupTeam|X Troop|Angel
+Done.
+
+> setupTeam|X Troop|Brian
+Team already exists!
+
+> startNewDay
+Insufficient command arguments!
+
+> startNewDay|31-Mar-2023
+Done.
+
+> setupTeam
+Insufficient command arguments!
+
+> setupTeam|Team 007
+Insufficient command arguments!
+
+> setupTeam|Team 007|Bob
+Employee not found!
+
+> setupTeam|Team 007|Brian
+Done.
+
+> listTeams
+Team Name      Leader    Setup Date
+Team 007       Brian     31-Mar-2023
+X Troop        Angel     20-Feb-2023

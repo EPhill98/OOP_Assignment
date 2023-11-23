@@ -1,0 +1,15 @@
+startNewDay|20-Feb-2023
+
+createProject|P001|21-Feb-2023|15
+createProject|P001|23-Feb-2023|20
+undo
+createProject|P001|23-Feb-2023|20
+listProjects
+
+createProject
+createProject|P702
+createProject|P702|1-Mar-2023
+createProject|P702|1-Mar-2023|thirty
+createProject|P702|1-Mar-2023|30
+listProjects
+

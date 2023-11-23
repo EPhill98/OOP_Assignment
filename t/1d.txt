@@ -1,0 +1,42 @@
+startNewDay|20-Feb-2023
+
+hire|Angel|14
+hire|Brian|14
+listEmployees
+
+setupTeam|X Troop|Angel 
+setupTeam|Spider Gang|Brian
+
+listTeams
+
+undo
+listTeams
+
+undo
+undo
+undo
+undo
+
+redo
+redo
+redo
+listTeams
+
+redo
+redo
+undo
+startNewDay|31-Mar-2023
+setupTeam|Team 007|Brian
+
+redo
+listTeams
+
+undo
+undo
+hire|Carol|21
+redo
+setupTeam|Team 007|Carol
+listEmployees
+listTeams
+
+

@@ -1,0 +1,38 @@
+startNewDay|01-Feb-2023
+
+hire|Angel|14
+hire|Brian|21
+hire|Carol|14
+
+hire|Dickson|21
+hire|Emily|14
+hire|Fanny|14
+hire|Gabriel|21
+hire|Helen|14
+
+setupTeam|X Troop|Angel 
+setupTeam|Team 007|Brian
+joinTeam|Dickson|X Troop
+joinTeam|Fanny|Team 007
+joinTeam|Emily|Team 007
+joinTeam|Gabriel|Team 007
+
+createProject|P001|5-Feb-2023|60
+createProject|P702|1-Mar-2023|30
+createProject|P103|27-Feb-2023|10
+createProject|P004|28-Feb-2023|1
+
+assign|P103|X Troop
+assign|P004|X Troop
+assign|P001|Team 007
+listProjects
+
+takeLeave|Brian|9-Feb-2023|11-Feb-2023
+takeLeave|Brian|19-Feb-2023|20-Feb-2023
+takeLeave|Fanny|14-Mar-2023|25-Mar-2023
+takeLeave|Emily|1-Mar-2023|1-Mar-2023
+
+listLeaves
+listTeamMembers|Team 007
+
+suggestProjectTeam|P702

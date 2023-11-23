@@ -1,0 +1,22 @@
+Please input the file pathname: 1b.txt
+
+> startNewDay|20-Feb-2023
+
+> createProject|P001|21-Feb-2023|15
+Done.
+
+> createProject|P702|1-Mar-2023|30
+Done.
+
+> createProject|P103|27-Feb-2023|10
+Done.
+
+> createProject|P004|28-Feb-2023|1
+Done.
+
+> listProjects
+Project  Start Day    End Day      Team         
+P001     21-Feb-2023  7-Mar-2023   --           
+P004     28-Feb-2023  28-Feb-2023  --           
+P103     27-Feb-2023  8-Mar-2023   --           
+P702     1-Mar-2023   30-Mar-2023  --           

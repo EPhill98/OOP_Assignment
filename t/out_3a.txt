@@ -1,0 +1,98 @@
+Please input the file pathname: 3a.txt
+
+> startNewDay|01-Feb-2023
+
+> hire|Angel|14
+Done.
+
+> hire|Brian|21
+Done.
+
+> hire|Carol|14
+Done.
+
+> hire|Dickson|21
+Done.
+
+> hire|Emily|14
+Done.
+
+> hire|Fanny|14
+Done.
+
+> hire|Gabriel|21
+Done.
+
+> hire|Helen|14
+Done.
+
+> setupTeam|X Troop|Angel
+Done.
+
+> setupTeam|Team 007|Brian
+Done.
+
+> joinTeam|Dickson|X Troop
+Done.
+
+> joinTeam|Fanny|Team 007
+Done.
+
+> joinTeam|Emily|Team 007
+Done.
+
+> joinTeam|Gabriel|Team 007
+Done.
+
+> createProject|P001|5-Feb-2023|10
+Done.
+
+> createProject|P702|1-Mar-2023|30
+Done.
+
+> createProject|P103|27-Feb-2023|10
+Done.
+
+> createProject|P004|28-Feb-2023|1
+Done.
+
+> assign|P103|X Troop
+Done.
+
+> assign|P004|X Troop
+Done.
+
+> assign|P001|Team 007
+Done.
+
+> listProjects
+Project  Start Day    End Day      Team         
+P001     5-Feb-2023   14-Feb-2023  Team 007 (Brian, Emily, Fanny, Gabriel)
+P004     28-Feb-2023  28-Feb-2023  X Troop (Angel, Dickson)
+P103     27-Feb-2023  8-Mar-2023   X Troop (Angel, Dickson)
+P702     1-Mar-2023   30-Mar-2023  --           
+
+> takeLeave|Brian|9-Feb-2023|10-Feb-2023
+The leave is invalid.  Reason: Project P001 will be in its final stage during 10-Feb-2023 to 14-Feb-2023.
+
+> takeLeave|Brian|9-Feb-2023|9-Feb-2023
+Done.  Brian's remaining annual leave: 20 days
+
+> takeLeave|Angel|8-Mar-2023|13-Mar-2023
+The leave is invalid.  Reason: Project P103 will be in its final stage during 4-Mar-2023 to 8-Mar-2023.
+
+> takeLeave|Angel|9-Mar-2023|13-Mar-2023
+Done.  Angel's remaining annual leave: 9 days
+
+> takeLeave|Angel|26-Feb-2023|28-Feb-2023
+The leave is invalid.  Reason: Project P004 will be in its final stage during 28-Feb-2023 to 28-Feb-2023.
+
+> takeLeave|Angel|26-Feb-2023|27-Feb-2023
+Done.  Angel's remaining annual leave: 7 days
+
+> listTeamMembers|Team 007
+Role      Name      Current / coming leaves
+Leader    Brian     9-Feb-2023 to 9-Feb-2023
+Member    Emily     --           
+Member    Fanny     --           
+Member    Gabriel   --           

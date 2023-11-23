@@ -1,0 +1,124 @@
+Please input the file pathname: 2f.txt
+> startNewDay|01-Feb-2023
+
+> hire|Angel|14
+Done.
+
+> hire|Brian|21
+Done.
+
+> hire|Carol|14
+Done.
+
+> hire|Dickson|21
+Done.
+
+> hire|Emily|14
+Done.
+
+> hire|Ada|14
+Done.
+
+> hire|Bill|21
+Done.
+
+> hire|Helen|14
+Done.
+
+> setupTeam|X Troop|Angel
+Done.
+
+> setupTeam|Spider Gang|Brian
+Done.
+
+> setupTeam|Team 007|Carol
+Done.
+
+> joinTeam|Dickson|X Troop
+Done.
+
+> joinTeam|Ada|Spider Gang
+Done.
+
+> joinTeam|Emily|Spider Gang
+Done.
+
+> joinTeam|Bill|Team 007
+Done.
+
+> joinTeam|Bill|Spider Gang
+Bill has already joined another team: Team 007
+
+> joinTeam|Angel|Spider Gang
+Angel has already joined another team: X Troop
+
+> setupTeam|Winners|Angel
+Angel has already joined another team: X Troop
+
+> listTeams
+Team Name      Leader    Setup Date   
+Spider Gang    Brian     1-Feb-2023   
+Team 007       Carol     1-Feb-2023   
+X Troop        Angel     1-Feb-2023   
+
+> listTeamMembers|Team 007
+Role      Name      Current / coming leaves
+Leader    Carol     --           
+Member    Bill      --           
+
+> listTeamMembers|Spider Gang
+Role      Name      Current / coming leaves
+Leader    Brian     --           
+Member    Ada       --           
+Member    Emily     --           
+
+> listTeamMembers|X Troop
+Role      Name      Current / coming leaves
+Leader    Angel     --           
+Member    Dickson   --           
+
+> undo
+
+> undo
+
+> redo
+
+> joinTeam
+Insufficient command arguments!
+
+> joinTeam|Helen
+Insufficient command arguments!
+
+> joinTeam|Henry|Spider Gang
+Employee not found!
+
+> joinTeam|Helen|Spider Troop
+Team not found!
+
+> joinTeam|Helen|Spider Gang
+Done.
+
+> redo
+Nothing to redo.
+
+> listTeams
+Team Name      Leader    Setup Date   
+Spider Gang    Brian     1-Feb-2023   
+Team 007       Carol     1-Feb-2023   
+X Troop        Angel     1-Feb-2023   
+
+> listTeamMembers|Team 007
+Role      Name      Current / coming leaves
+Leader    Carol     --           
+
+> listTeamMembers|Spider Gang
+Role      Name      Current / coming leaves
+Leader    Brian     --           
+Member    Ada       --           
+Member    Emily     --           
+Member    Helen     --           
+
+> listTeamMembers|X Troop
+Role      Name      Current / coming leaves
+Leader    Angel     --           
+Member    Dickson   --           

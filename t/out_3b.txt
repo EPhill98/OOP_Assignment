@@ -1,0 +1,112 @@
+Please input the file pathname: 3b.txt
+
+> startNewDay|01-Feb-2023
+
+> hire|Angel|14
+Done.
+
+> hire|Brian|21
+Done.
+
+> hire|Carol|14
+Done.
+
+> hire|Dickson|21
+Done.
+
+> hire|Emily|14
+Done.
+
+> hire|Fanny|14
+Done.
+
+> hire|Gabriel|21
+Done.
+
+> hire|Helen|14
+Done.
+
+> setupTeam|X Troop|Angel
+Done.
+
+> setupTeam|Team 007|Brian
+Done.
+
+> joinTeam|Dickson|X Troop
+Done.
+
+> joinTeam|Fanny|Team 007
+Done.
+
+> joinTeam|Emily|Team 007
+Done.
+
+> joinTeam|Gabriel|Team 007
+Done.
+
+> createProject|P001|5-Feb-2023|60
+Done.
+
+> createProject|P702|1-Mar-2023|30
+Done.
+
+> createProject|P103|27-Feb-2023|10
+Done.
+
+> createProject|P004|28-Feb-2023|1
+Done.
+
+> assign|P103|X Troop
+Done.
+
+> assign|P004|X Troop
+Done.
+
+> assign|P001|Team 007
+Done.
+
+> listProjects
+Project  Start Day    End Day      Team         
+P001     5-Feb-2023   5-Apr-2023   Team 007 (Brian, Emily, Fanny, Gabriel)
+P004     28-Feb-2023  28-Feb-2023  X Troop (Angel, Dickson)
+P103     27-Feb-2023  8-Mar-2023   X Troop (Angel, Dickson)
+P702     1-Mar-2023   30-Mar-2023  --           
+
+> takeLeave|Brian|9-Feb-2023|11-Feb-2023
+Done.  Brian's remaining annual leave: 18 days
+
+> takeLeave|Brian|19-Feb-2023|20-Feb-2023
+Done.  Brian's remaining annual leave: 16 days
+
+> takeLeave|Fanny|14-Mar-2023|25-Mar-2023
+Done.  Fanny's remaining annual leave: 2 days
+
+> takeLeave|Emily|1-Mar-2023|1-Mar-2023
+Done.  Emily's remaining annual leave: 13 days
+
+> listLeaves
+Angel: --
+Brian: 9-Feb-2023 to 11-Feb-2023, 19-Feb-2023 to 20-Feb-2023
+Carol: --
+Dickson: --
+Emily: 1-Mar-2023 to 1-Mar-2023
+Fanny: 14-Mar-2023 to 25-Mar-2023
+Gabriel: --
+Helen: --
+
+> listTeamMembers|Team 007
+Role      Name      Current / coming leaves
+Leader    Brian     9-Feb-2023 to 11-Feb-2023, 19-Feb-2023 to 20-Feb-2023
+Member    Emily     1-Mar-2023 to 1-Mar-2023
+Member    Fanny     14-Mar-2023 to 25-Mar-2023
+Member    Gabriel   --           
+
+> suggestProjectTeam|P702
+During the period of project P702 (1-Mar-2023 to 30-Mar-2023):
+  Average manpower (m) and count of existing projects (p) of each team:
+    Team 007: m=3.57 workers, p=1.00 projects
+    X Troop: m=2.00 workers, p=0.27 projects
+  Projected loading factor when a team takes this project P702:
+    Team 007: (p+1)/m = 0.56
+    X Troop: (p+1)/m = 0.63
+Conclusion: P702 should be assigned to Team 007 for best balancing of loading

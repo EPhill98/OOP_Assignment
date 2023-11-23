@@ -1,0 +1,60 @@
+Please input the file pathname: 1c.txt
+> startNewDay|20-Feb-2023
+
+> hire|Angel|14
+Done.
+
+> hire|Brian|14
+Done.
+
+> listEmployees
+Angel (Entitled Annual Leaves: 14 days)
+Brian (Entitled Annual Leaves: 14 days)
+
+> setupTeam|X Troop|Angel
+Done.
+
+> listTeams
+Team Name      Leader    Setup Date   
+X Troop        Angel     20-Feb-2023  
+
+> createProject|P001|25-Feb-2023|15
+Done.
+
+> createProject|P702|1-Mar-2023|30
+Done.
+
+> createProject|P103|27-Feb-2023|10
+Done.
+
+> createProject|P004|28-Feb-2023|1
+Done.
+
+> assign|P103|X Troop
+Done.
+
+> assign|P004|X Troop
+Done.
+
+> listProjects
+Project  Start Day    End Day      Team         
+P001     25-Feb-2023  11-Mar-2023  --           
+P004     28-Feb-2023  28-Feb-2023  X Troop (Angel)
+P103     27-Feb-2023  8-Mar-2023   X Troop (Angel)
+P702     1-Mar-2023   30-Mar-2023  --           
+
+> startNewDay|21-Feb-2023
+Done.
+
+> setupTeam|Team 007|Brian
+Done.
+
+> assign|P702|Team 007
+Done.
+
+> listProjects
+Project  Start Day    End Day      Team         
+P001     25-Feb-2023  11-Mar-2023  --           
+P004     28-Feb-2023  28-Feb-2023  X Troop (Angel)
+P103     27-Feb-2023  8-Mar-2023   X Troop (Angel)
+P702     1-Mar-2023   30-Mar-2023  Team 007 (Brian)

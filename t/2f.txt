@@ -1,0 +1,43 @@
+startNewDay|01-Feb-2023
+
+hire|Angel|14
+hire|Brian|21
+hire|Carol|14
+
+hire|Dickson|21
+hire|Emily|14
+hire|Ada|14
+hire|Bill|21
+hire|Helen|14
+
+setupTeam|X Troop|Angel 
+setupTeam|Spider Gang|Brian
+setupTeam|Team 007|Carol
+joinTeam|Dickson|X Troop
+joinTeam|Ada|Spider Gang
+joinTeam|Emily|Spider Gang
+joinTeam|Bill|Team 007
+
+joinTeam|Bill|Spider Gang
+joinTeam|Angel|Spider Gang
+setupTeam|Winners|Angel
+
+listTeams
+listTeamMembers|Team 007
+listTeamMembers|Spider Gang
+listTeamMembers|X Troop
+
+undo
+undo
+redo
+joinTeam
+joinTeam|Helen
+joinTeam|Henry|Spider Gang
+joinTeam|Helen|Spider Troop
+joinTeam|Helen|Spider Gang
+redo
+
+listTeams
+listTeamMembers|Team 007
+listTeamMembers|Spider Gang
+listTeamMembers|X Troop

@@ -1,0 +1,67 @@
+Please input the file pathname: 2a.txt
+
+> startNewDay|01-Jan-2023
+
+> hire|Bob|30
+Done.
+
+> hire|Carol|20
+Done.
+
+> takeLeave|Bob|02-Feb-2023|08-Feb-2023       
+Done.  Bob's remaining annual leave: 23 days  
+
+> takeLeave|Carol|03-Jan-2023|08-Jan-2023     
+Done.  Carol's remaining annual leave: 14 days
+
+> takeLeave|Carol|02-Mar-2023|02-Mar-2023     
+Done.  Carol's remaining annual leave: 13 days
+
+> listLeaves|Bob
+Bob: 2-Feb-2023 to 8-Feb-2023
+
+> listLeaves|Carol
+Carol: 3-Jan-2023 to 8-Jan-2023, 2-Mar-2023 to 2-Mar-2023
+
+> listLeaves
+Bob: 2-Feb-2023 to 8-Feb-2023
+Carol: 3-Jan-2023 to 8-Jan-2023, 2-Mar-2023 to 2-Mar-2023
+
+> startNewDay|01-Feb-2023
+Done.
+
+> listLeaves|Bob
+Bob: 2-Feb-2023 to 8-Feb-2023
+
+> listLeaves|Carol
+Carol: 2-Mar-2023 to 2-Mar-2023
+
+> listLeaves
+Bob: 2-Feb-2023 to 8-Feb-2023
+Carol: 2-Mar-2023 to 2-Mar-2023
+
+> startNewDay|08-Feb-2023
+Done.
+
+> listLeaves|Bob
+Bob: 2-Feb-2023 to 8-Feb-2023
+
+> listLeaves|Carol
+Carol: 2-Mar-2023 to 2-Mar-2023
+
+> listLeaves
+Bob: 2-Feb-2023 to 8-Feb-2023
+Carol: 2-Mar-2023 to 2-Mar-2023
+
+> startNewDay|01-Apr-2023
+Done.
+
+> listLeaves|Bob
+Bob: --
+
+> listLeaves|Carol
+Carol: --
+
+> listLeaves
+Bob: --
+Carol: --

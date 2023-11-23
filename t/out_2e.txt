@@ -1,0 +1,54 @@
+Please input the file pathname: 2e.txt
+> startNewDay|01-Jan-2023
+
+> hire|Bob|30
+Done.
+
+> hire|Carol|20
+Done.
+
+> takeLeave
+Insufficient command arguments!
+
+> takeLeave|Bob
+Insufficient command arguments!
+
+> takeLeave|Bob|02-Feb-2023
+Insufficient command arguments!
+
+> takeLeave|Bob|02-Feb-2023|08-Feb-2023
+Done.  Bob's remaining annual leave: 23 days
+
+> takeLeave|Carol|02-Mar-2023|06-Mar-2023
+Done.  Carol's remaining annual leave: 15 days
+
+> takeLeave|Carol|28-Feb-2023|03-Mar-2023
+Leave overlapped: The leave period 2-Mar-2023 to 6-Mar-2023 is found!
+
+> takeLeave|Carol|03-Mar-2023|08-Mar-2023
+Leave overlapped: The leave period 2-Mar-2023 to 6-Mar-2023 is found!
+
+> takeLeave|Carol|03-Mar-2023|04-Mar-2023
+Leave overlapped: The leave period 2-Mar-2023 to 6-Mar-2023 is found!
+
+> takeLeave|Carol|01-Mar-2023|07-Mar-2023
+Leave overlapped: The leave period 2-Mar-2023 to 6-Mar-2023 is found!
+
+> takeLeave|Carol|08-Jun-2023|10-Jun-2023
+Done.  Carol's remaining annual leave: 12 days
+
+> takeLeave|Carol|25-Apr-2023|7-May-2023
+Insufficient balance of annual leave. 12 days left only!
+
+> takeLeave|Carol|25-Apr-2023|6-May-2023
+Done.  Carol's remaining annual leave: 0 days
+
+> listLeaves|Bob
+Bob: 2-Feb-2023 to 8-Feb-2023
+
+> listLeaves|Carol
+Carol: 2-Mar-2023 to 6-Mar-2023, 25-Apr-2023 to 6-May-2023, 8-Jun-2023 to 10-Jun-2023
+
+> listLeaves
+Bob: 2-Feb-2023 to 8-Feb-2023
+Carol: 2-Mar-2023 to 6-Mar-2023, 25-Apr-2023 to 6-May-2023, 8-Jun-2023 to 10-Jun-2023

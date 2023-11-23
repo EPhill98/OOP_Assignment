@@ -1,0 +1,21 @@
+startNewDay|20-Feb-2023
+
+hire|Angel|14
+hire|Angel|21
+hire
+hire|Brian
+hire|Brian|ten
+hire|Brian|10
+listEmployees
+
+setupTeam|X Troop|Angel 
+setupTeam|X Troop|Brian 
+
+startNewDay
+startNewDay|31-Mar-2023
+
+setupTeam
+setupTeam|Team 007
+setupTeam|Team 007|Bob
+setupTeam|Team 007|Brian
+listTeams

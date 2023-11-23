@@ -1,0 +1,23 @@
+startNewDay|20-Feb-2023
+
+hire|Angel|14
+hire|Brian|14
+listEmployees
+
+setupTeam|X Troop|Angel 
+listTeams
+
+createProject|P001|25-Feb-2023|15
+createProject|P702|1-Mar-2023|30
+createProject|P103|27-Feb-2023|10
+createProject|P004|28-Feb-2023|1
+
+assign|P103|X Troop
+assign|P004|X Troop
+listProjects
+
+startNewDay|21-Feb-2023
+setupTeam|Team 007|Brian
+assign|P702|Team 007
+
+listProjects

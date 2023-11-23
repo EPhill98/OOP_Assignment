@@ -1,0 +1,93 @@
+Please input the file pathname: 1d.txt
+
+> startNewDay|20-Feb-2023
+
+> hire|Angel|14
+Done.
+
+> hire|Brian|14
+Done.
+
+> listEmployees
+Angel (Entitled Annual Leaves: 14 days)
+Brian (Entitled Annual Leaves: 14 days)
+
+> setupTeam|X Troop|Angel
+Done.
+
+> setupTeam|Spider Gang|Brian
+Done.
+
+> listTeams
+Team Name      Leader    Setup Date   
+Spider Gang    Brian     20-Feb-2023  
+X Troop        Angel     20-Feb-2023  
+
+> undo
+
+> listTeams
+Team Name      Leader    Setup Date   
+X Troop        Angel     20-Feb-2023  
+
+> undo
+
+> undo
+
+> undo
+
+> undo
+Nothing to undo.
+
+> redo
+
+> redo
+
+> redo
+
+> listTeams
+Team Name      Leader    Setup Date   
+X Troop        Angel     20-Feb-2023  
+
+> redo
+
+> redo
+Nothing to redo.
+
+> undo
+
+> startNewDay|31-Mar-2023
+Done.
+
+> setupTeam|Team 007|Brian
+Done.
+
+> redo
+Nothing to redo.
+
+> listTeams
+Team Name      Leader    Setup Date   
+Team 007       Brian     31-Mar-2023  
+X Troop        Angel     20-Feb-2023  
+
+> undo
+
+> undo
+
+> hire|Carol|21
+Done.
+
+> redo
+Nothing to redo.
+
+> setupTeam|Team 007|Carol
+Done.
+
+> listEmployees
+Angel (Entitled Annual Leaves: 14 days)
+Brian (Entitled Annual Leaves: 14 days)
+Carol (Entitled Annual Leaves: 21 days)
+
+> listTeams
+Team Name      Leader    Setup Date   
+Team 007       Carol     20-Feb-2023  
+X Troop        Angel     20-Feb-2023  

@@ -1,0 +1,27 @@
+Please input the file pathname: 1a.txt
+
+> startNewDay|20-Feb-2023
+
+> hire|Angel|14
+Done.
+
+> hire|Brian|14
+Done.
+
+> listEmployees
+Angel (Entitled Annual Leaves: 14 days)
+Brian (Entitled Annual Leaves: 14 days)
+
+> setupTeam|X Troop|Angel
+Done.
+
+> startNewDay|31-Mar-2023
+Done.
+
+> setupTeam|Team 007|Brian
+Done.
+
+> listTeams
+Team Name      Leader    Setup Date   
+Team 007       Brian     31-Mar-2023  
+X Troop        Angel     20-Feb-2023  
