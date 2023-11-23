@@ -1,6 +1,10 @@
 import java.util.ArrayList;
 import java.util.Collections;
-
+/**
+ * Company class which holds information on employees, projects and teams. Methods to change data.
+ * @author Euan Phillips
+ * @version 1.0
+ */
 public class Company {
     private ArrayList<Employee> allEmployees;
     private ArrayList<Team> allTeams;
