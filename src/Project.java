@@ -19,6 +19,8 @@ public class Project implements Comparable<Project> {
                     endDay = endDay.nextDay();
                 } else if (Day.valid(endDay.getYear(), endDay.getMonth() + 1, 1)) {
                     endDay = new Day(endDay.getYear(), endDay.getMonth() + 1, 1);
+                } else if (Day.valid(endDay.getYear()+1, 1, 1)){
+                    endDay = new Day(endDay.getYear()+1, 1, 1);
                 }
             }
         }
@@ -69,12 +71,6 @@ public class Project implements Comparable<Project> {
     public void setTeamName(Team t) {
         this.team = t;
         this.teamName = t.getTeamName();
-    }
-
-    public void setTeam(Object object) {
-        if (object == null){
-            this.teamName = "--";
-        }
     }
 
     public void setTeamNull(){
