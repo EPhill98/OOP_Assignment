@@ -6,5 +6,11 @@ public class EmployeeAlreadyExists extends Exception {
     public EmployeeAlreadyExists(String m){
         super(m);
     }
+    @Override
+    public String toString() {
+        return "Employee already exists!";
+    }
+
+    
 
 }

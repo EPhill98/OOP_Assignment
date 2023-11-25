@@ -9,7 +9,11 @@ public class CmdHire extends RecordedCommand {
             addUndoCommand(this);
             clearRedoList();
             System.out.println("Done.");
+        } catch (NumberFormatException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
         } catch (EmployeeAlreadyExists e) {
+            // TODO Auto-generated catch block
             System.out.println(e);
         }
     }

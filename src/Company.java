@@ -31,14 +31,23 @@ public class Company {
             System.out.println(e.toString());
         }
     }
-
-    public Employee createEmployee(String n, int al) throws EmployeeAlreadyExists {
-        Employee e = new Employee(n, al);
-        if (allEmployees.contains(e)) {
-            throw new EmployeeAlreadyExists();
+    public boolean checkEmployees(String name){
+        for (Employee employee : allEmployees) {
+            if (employee.getName().equals(name)){
+                return true;
+            } 
         }
+        return false;
+    }
+    public Employee createEmployee(String n, int al) throws EmployeeAlreadyExists {
+        Employee e;
+        if (checkEmployees(n)) {
+            throw new EmployeeAlreadyExists();
+        } else {
+        e = new Employee(n, al);
         allEmployees.add(e);
         Collections.sort(allEmployees);
+        }
         return e;
     }
 
