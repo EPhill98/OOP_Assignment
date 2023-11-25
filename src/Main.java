@@ -56,7 +56,11 @@ public class Main {
                     System.out.println(e);
                 }
             if (cmdParts[0].equals("createProject"))
-                (new CmdCreateProject()).execute(cmdParts);
+                try {
+                    (new CmdCreateProject()).execute(cmdParts);
+                } catch (InsufficientCommandArgumentsEx e) {
+                    System.out.println(e);
+                }
             if (cmdParts[0].equals("listProjects"))
                 (new CmdListProject()).execute(cmdParts);
             if (cmdParts[0].equals("assign"))

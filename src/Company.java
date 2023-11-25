@@ -101,11 +101,16 @@ public class Company {
     }
 
     public Project createProject(String string, String string2, String len) throws ProjectAlreadyExists {
-        Day d = new Day(string2);
-        int length = Integer.parseInt(len);
-        Project p = new Project(string, d, length);
-        allProjects.add(p);
-        Collections.sort(allProjects);
+        Project p;
+        if (!checkProject(string)) {
+            Day d = new Day(string2);
+            int length = Integer.parseInt(len);
+            p = new Project(string, d, length);
+            allProjects.add(p);
+            Collections.sort(allProjects);
+        } else {
+            throw new ProjectAlreadyExists();
+        }
         return p;
     }
 
@@ -125,6 +130,10 @@ public class Company {
             }
         }
         return null;
+    }
+
+    public boolean checkProject(String name) {
+        return (findProject(name) != null);
     }
 
     public Team findTeam(String string) {

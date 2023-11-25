@@ -1,4 +1,4 @@
-import java.util.InputMismatchException;
+
 
 public class CmdHire extends RecordedCommand {
     private Employee e;
