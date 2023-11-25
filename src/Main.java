@@ -34,7 +34,11 @@ public class Main {
             String[] cmdParts = cmdLine.split("\\|");
 
             if (cmdParts[0].equals("hire"))
-                (new CmdHire()).execute(cmdParts);
+                try {
+                    (new CmdHire()).execute(cmdParts);
+                } catch (InsufficientCommandArgumentsEx e) {
+                    System.out.println(e);
+                }
             if (cmdParts[0].equals("listEmployees"))
                 (new CmdListEmployees()).execute(cmdParts);
             if (cmdParts[0].equals("setupTeam"))

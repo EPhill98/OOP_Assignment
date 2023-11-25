@@ -1,20 +1,23 @@
+import java.util.InputMismatchException;
+
 public class CmdHire extends RecordedCommand {
     private Employee e;
 
     @Override
-    public void execute(String[] cmdParts) {
+    public void execute(String[] cmdParts) throws InsufficientCommandArgumentsEx {
         Company c = Company.getInstance();
+        if (cmdParts.length != 3) {
+            throw new InsufficientCommandArgumentsEx();
+        }
         try {
             e = c.createEmployee(cmdParts[1], Integer.parseInt(cmdParts[2]));
             addUndoCommand(this);
             clearRedoList();
             System.out.println("Done.");
-        } catch (NumberFormatException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
         } catch (EmployeeAlreadyExists e) {
-            // TODO Auto-generated catch block
             System.out.println(e);
+        } catch (InputMismatchException e) {
+            System.out.println("Wrong number format for annual leaves!");
         }
     }
 
