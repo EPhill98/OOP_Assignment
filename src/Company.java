@@ -1,7 +1,10 @@
 import java.util.ArrayList;
 import java.util.Collections;
+
 /**
- * Company class which holds information on employees, projects and teams. Methods to change data.
+ * Company class which holds information on employees, projects and teams.
+ * Methods to change data.
+ * 
  * @author Euan Phillips
  * @version 1.0
  */
@@ -31,31 +34,51 @@ public class Company {
             System.out.println(e.toString());
         }
     }
-    public boolean checkEmployees(String name){
+
+    public boolean checkEmployees(String name) {
         for (Employee employee : allEmployees) {
-            if (employee.getName().equals(name)){
+            if (employee.getName().equals(name)) {
                 return true;
-            } 
+            }
         }
         return false;
     }
+
+    public boolean checkTeam(String name) {
+        for (Team t : allTeams) {
+            if (t.getTeamName().equals(name)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public Employee createEmployee(String n, int al) throws EmployeeAlreadyExists {
         Employee e;
         if (checkEmployees(n)) {
             throw new EmployeeAlreadyExists();
         } else {
-        e = new Employee(n, al);
-        allEmployees.add(e);
-        Collections.sort(allEmployees);
+            e = new Employee(n, al);
+            allEmployees.add(e);
+            Collections.sort(allEmployees);
         }
         return e;
     }
 
-    public Team createTeam(String name, String head) {
+    public Team createTeam(String name, String head) throws EmployeeNotFound, TeamAlreadyExistsEx {
+        Team t;
         Employee e = Employee.searchEmployee(allEmployees, head);
-        Team t = new Team(name, e);
-        allTeams.add(t);
-        Collections.sort(allTeams);
+        if (!checkTeam(name)) {
+            if (e != null) {
+                t = new Team(name, e);
+                allTeams.add(t);
+                Collections.sort(allTeams);
+            } else {
+                throw new EmployeeNotFound();
+            }
+        } else {
+            throw new TeamAlreadyExistsEx();
+        }
         return t;
     }
 

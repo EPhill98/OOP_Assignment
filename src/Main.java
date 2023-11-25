@@ -42,11 +42,19 @@ public class Main {
             if (cmdParts[0].equals("listEmployees"))
                 (new CmdListEmployees()).execute(cmdParts);
             if (cmdParts[0].equals("setupTeam"))
-                (new CmdSetUpTeam()).execute(cmdParts);
+                try {
+                    (new CmdSetUpTeam()).execute(cmdParts);
+                } catch (InsufficientCommandArgumentsEx e) {
+                    System.out.println(e);
+                }
             if (cmdParts[0].equals("listTeams"))
                 (new CmdListTeams()).execute(cmdParts);
             if (cmdParts[0].equals("startNewDay"))
-                (new CmdStartNewDay()).execute(cmdParts);
+                try {
+                    (new CmdStartNewDay()).execute(cmdParts);
+                } catch (InsufficientCommandArgumentsEx e) {
+                    System.out.println(e);
+                }
             if (cmdParts[0].equals("createProject"))
                 (new CmdCreateProject()).execute(cmdParts);
             if (cmdParts[0].equals("listProjects"))

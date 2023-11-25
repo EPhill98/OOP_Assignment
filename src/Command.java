@@ -1,3 +1,3 @@
 interface Command {
-    void execute(String[] cmdParts) throws InsufficientCommandArgumentsEx;
+    void execute(String[] cmdParts) throws InsufficientCommandArgumentsEx, EmployeeNotFound, TeamAlreadyExistsEx;
 }

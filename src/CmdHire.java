@@ -10,14 +10,15 @@ public class CmdHire extends RecordedCommand {
             throw new InsufficientCommandArgumentsEx();
         }
         try {
-            e = c.createEmployee(cmdParts[1], Integer.parseInt(cmdParts[2]));
-            addUndoCommand(this);
-            clearRedoList();
-            System.out.println("Done.");
+            Integer n = tryParse(cmdParts[2]);
+            if (n != null) {
+                e = c.createEmployee(cmdParts[1], tryParse(cmdParts[2]));
+                addUndoCommand(this);
+                clearRedoList();
+                System.out.println("Done.");
+            }
         } catch (EmployeeAlreadyExists e) {
             System.out.println(e);
-        } catch (InputMismatchException e) {
-            System.out.println("Wrong number format for annual leaves!");
         }
     }
 
@@ -41,5 +42,15 @@ public class CmdHire extends RecordedCommand {
         } catch (EmployeeAlreadyExists e) {
             System.out.println(e);
         }
+    }
+
+    public Integer tryParse(String s) {
+        Integer result = null;
+        try {
+            result = Integer.parseInt(s);
+        } catch (NumberFormatException e) {
+            System.out.println("Wrong number format for annual leaves!");
+        }
+        return result;
     }
 }
