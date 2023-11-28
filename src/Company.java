@@ -9,11 +9,10 @@ import java.util.Collections;
  * @version 1.0
  */
 public class Company {
+    
     private ArrayList<Employee> allEmployees;
     private ArrayList<Team> allTeams;
     private ArrayList<Project> allProjects;
-
-
     private static Company instance = new Company();
 
     private Company() {
@@ -176,11 +175,8 @@ public class Company {
 
     public void listAllLeaves(){
         for (Employee e : allEmployees){
-            if (!e.getTakenLeaave().isEmpty()){
                 e.printLeave();
                 System.out.println();
-            }
         }
     }
-
 }
