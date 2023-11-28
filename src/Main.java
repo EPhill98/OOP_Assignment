@@ -1,6 +1,7 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
+
 public class Main {
 
     public static void main(String[] args) throws FileNotFoundException {
@@ -67,7 +68,7 @@ public class Main {
                 } catch (TeamNotFoundEx e) {
                     System.out.println(e);
                 }
-            
+
             if (cmdParts[0].equals("undo"))
                 RecordedCommand.undoOneCommand();
             if (cmdParts[0].equals("redo"))
