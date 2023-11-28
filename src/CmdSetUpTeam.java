@@ -14,6 +14,8 @@ public class CmdSetUpTeam extends RecordedCommand {
                 System.out.println(e);
             } catch (TeamAlreadyExistsEx e) {
                 System.out.println(e);
+            } catch (IsAlreadyAssignedEx e) {
+                System.out.println(e);
             }
         } else {
             throw new InsufficientCommandArgumentsEx();
@@ -24,6 +26,8 @@ public class CmdSetUpTeam extends RecordedCommand {
     public void undoMe() {
         Company c = Company.getInstance();
         c.removeTeam(t);
+        t.getHead().setTeam(null);
+        t.getHead().setAssigned(false);
         addRedoCommand(this);
 
     }
@@ -32,6 +36,8 @@ public class CmdSetUpTeam extends RecordedCommand {
     public void redoMe() {
         Company c = Company.getInstance();
         c.addTeam(t);
+        t.getHead().setTeam(t.getTeamName());
+        t.getHead().setAssigned(true);
         addUndoCommand(this);
 
     }

@@ -65,21 +65,27 @@ public class Company {
         return e;
     }
 
-    public Team createTeam(String name, String head) throws EmployeeNotFound, TeamAlreadyExistsEx {
+    public Team createTeam(String name, String head) throws EmployeeNotFound, TeamAlreadyExistsEx, IsAlreadyAssignedEx {
         Team t;
         Employee e = Employee.searchEmployee(allEmployees, head);
         if (!checkTeam(name)) {
             if (e != null) {
-                t = new Team(name, e);
-                allTeams.add(t);
-                Collections.sort(allTeams);
+                if (!e.isAssigned()) {
+                    t = new Team(name, e);
+                    allTeams.add(t);
+                    Collections.sort(allTeams);
+                } else {
+                    String errorMsg = String.format("%s has already joined another team: %s",
+                            e.getName(), e.getTeamName());
+                    throw new IsAlreadyAssignedEx(errorMsg);
+                }
             } else {
                 throw new EmployeeNotFound();
             }
+            return t;
         } else {
             throw new TeamAlreadyExistsEx();
         }
-        return t;
     }
 
     public void addTeam(Team t) {

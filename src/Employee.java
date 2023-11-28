@@ -3,10 +3,13 @@ import java.util.ArrayList;
 public class Employee implements  Comparable<Employee>{
     private String name;
     private int annualLeaves;
+    private boolean isAssigned; 
+    private String assigendTeamName;
 
     public Employee(String n, int yle){
         this.name = n;
         this. annualLeaves = yle;
+        this.isAssigned = false;
     }
 
     public static Employee searchEmployee(ArrayList<Employee> list, String name){
@@ -17,6 +20,7 @@ public class Employee implements  Comparable<Employee>{
        }
        return null;
     }
+    
 
     @Override
     public int compareTo(Employee another) {
@@ -44,5 +48,20 @@ public class Employee implements  Comparable<Employee>{
     @Override
     public String toString() {
         return name + " (Entitled Annual Leaves: " + annualLeaves + " days)";
+    }
+
+    public boolean isAssigned() {
+        return isAssigned;
+    }
+
+    public void setAssigned(boolean isAssigned) {
+        this.isAssigned = isAssigned;
+    }
+
+    public void setTeam(String n) {
+        this.assigendTeamName = n;
+    }
+    public String getTeamName(){
+        return assigendTeamName;
     }
 }
