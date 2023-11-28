@@ -12,8 +12,6 @@ public class Main {
 
         Scanner inFile = new Scanner(new File(filepathname));
 
-        // The first command in the file must be to set the system date
-        // (eg. "startNewDay|01-Jan-2022"); and it cannot be undone
         String cmdLine1 = inFile.nextLine();
         String[] cmdLine1Parts = cmdLine1.split("\\|");
         System.out.println("\n> " + cmdLine1);
@@ -22,15 +20,11 @@ public class Main {
         while (inFile.hasNext()) {
             String cmdLine = inFile.nextLine().trim();
 
-            // Blank lines exist in data file as separators. Skip them.
             if (cmdLine.equals(""))
                 continue;
 
             System.out.println("\n> " + cmdLine);
 
-            // split the words in actionLine => create an array of word strings
-            // http://stackoverflow.com/questions/5675704/java-string-split-not-returning-the-right-values
-            // https://community.oracle.com/thread/2084308
             String[] cmdParts = cmdLine.split("\\|");
 
             if (cmdParts[0].equals("hire"))
