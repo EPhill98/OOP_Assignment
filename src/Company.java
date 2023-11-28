@@ -13,6 +13,7 @@ public class Company {
     private ArrayList<Team> allTeams;
     private ArrayList<Project> allProjects;
 
+
     private static Company instance = new Company();
 
     private Company() {
@@ -42,6 +43,15 @@ public class Company {
             }
         }
         return false;
+    }
+
+    public Employee getEmployee(String eName){
+        for (Employee e : allEmployees){
+            if (e.getName().equals(eName)){
+                return e;
+            }
+        } 
+        return null;
     }
 
     public boolean checkTeam(String name) {
@@ -162,6 +172,15 @@ public class Company {
 
     public void unassign(Project p) {
         p.setTeamNull();
+    }
+
+    public void listAllLeaves(){
+        for (Employee e : allEmployees){
+            if (!e.getTakenLeaave().isEmpty()){
+                e.printLeave();
+                System.out.println();
+            }
+        }
     }
 
 }

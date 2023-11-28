@@ -34,16 +34,14 @@ public class Main {
                 } catch (InsufficientCommandArgumentsEx e) {
                     System.out.println(e);
                 }
-            if (cmdParts[0].equals("listEmployees"))
-                (new CmdListEmployees()).execute(cmdParts);
+
             if (cmdParts[0].equals("setupTeam"))
                 try {
                     (new CmdSetUpTeam()).execute(cmdParts);
                 } catch (InsufficientCommandArgumentsEx e) {
                     System.out.println(e);
                 }
-            if (cmdParts[0].equals("listTeams"))
-                (new CmdListTeams()).execute(cmdParts);
+
             if (cmdParts[0].equals("startNewDay"))
                 try {
                     (new CmdStartNewDay()).execute(cmdParts);
@@ -56,8 +54,7 @@ public class Main {
                 } catch (InsufficientCommandArgumentsEx e) {
                     System.out.println(e);
                 }
-            if (cmdParts[0].equals("listProjects"))
-                (new CmdListProject()).execute(cmdParts);
+
             if (cmdParts[0].equals("assign"))
                 try {
                     (new CmdAssign()).execute(cmdParts);
@@ -68,9 +65,23 @@ public class Main {
                 } catch (TeamNotFoundEx e) {
                     System.out.println(e);
                 }
+            if (cmdParts[0].equals("takeLeave"))
+                new CmdTakeLeave().execute(cmdParts);
+
+            if (cmdParts[0].equals("listProjects"))
+                (new CmdListProject()).execute(cmdParts);
+
+            if (cmdParts[0].equals("listTeams"))
+                (new CmdListTeams()).execute(cmdParts);
+
+            if (cmdParts[0].equals("listEmployees"))
+                (new CmdListEmployees()).execute(cmdParts);
+            if (cmdParts[0].equals("listLeaves"))
+                (new CmdListLeaves()).execute(cmdParts);
 
             if (cmdParts[0].equals("undo"))
                 RecordedCommand.undoOneCommand();
+
             if (cmdParts[0].equals("redo"))
                 RecordedCommand.redoOneCommand();
         }

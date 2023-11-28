@@ -88,6 +88,20 @@ public class Day implements Cloneable{
         return MonthNames;
     }
 
+    public int getDateComp(){
+        String y,m,d;
+        y = String.valueOf(year);
+        m = String.valueOf(month);
+        if (m.length() == 1){
+            m = "0" + m;
+        }
+        d = String.valueOf(day);
+        if (d.length() == 1){
+            d = "0" + d;
+        }
+        return Integer.parseInt(y + m + d);
+    }
+
     // Return a string for the day like dd MMM yyyy
     @Override 
     public Day clone (){
