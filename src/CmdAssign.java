@@ -3,14 +3,24 @@ public class CmdAssign extends RecordedCommand {
     Team t;
     Project p;
 
-    public void execute(String[] cmdParts) {
+    public void execute(String[] cmdParts) throws InsufficientCommandArgumentsEx, ProjectNotFoundEx, TeamNotFoundEx {
         Company c = Company.getInstance();
-        p = c.findProject(cmdParts[1]);
-        t = c.findTeam(cmdParts[2]);
-        p.setTeamName(t);
-        addUndoCommand(this);
-        clearRedoList();
-        System.out.println("Done.");
+        if (cmdParts.length != 3) {
+            throw new InsufficientCommandArgumentsEx();
+        } else {
+            p = c.findProject(cmdParts[1]);
+            t = c.findTeam(cmdParts[2]);
+            if (p == null){
+                throw new ProjectNotFoundEx();
+            } else if (t == null){
+                throw new TeamNotFoundEx();
+            } else {
+            p.setTeamName(t);
+            addUndoCommand(this);
+            clearRedoList();
+            System.out.println("Done.");
+            }
+        }
     }
 
     @Override

@@ -58,7 +58,15 @@ public class Main {
             if (cmdParts[0].equals("listProjects"))
                 (new CmdListProject()).execute(cmdParts);
             if (cmdParts[0].equals("assign"))
-                (new CmdAssign()).execute(cmdParts);
+                try {
+                    (new CmdAssign()).execute(cmdParts);
+                } catch (InsufficientCommandArgumentsEx e) {
+                    System.out.println(e);
+                } catch (ProjectNotFoundEx e) {
+                    System.out.println(e);
+                } catch (TeamNotFoundEx e) {
+                    System.out.println(e);
+                }
             
             if (cmdParts[0].equals("undo"))
                 RecordedCommand.undoOneCommand();
