@@ -95,7 +95,7 @@ public class Employee implements Comparable<Employee> {
     }
 
     public void deleteLeave() {
-        takenLeaave.remove(-1);
+        takenLeaave.remove(takenLeaave.size()-1);
     }
 
     public void printLeave() {
