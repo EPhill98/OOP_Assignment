@@ -33,6 +33,7 @@ public class CmdTakeLeave extends RecordedCommand {
 
     @Override
     public void undoMe() {
+
         e.setAnnualLeaves(oldLeave);
         e.deleteLeave();
         addRedoCommand(this);

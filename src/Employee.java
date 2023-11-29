@@ -2,6 +2,7 @@ import java.util.ArrayList;
 
 public class Employee implements Comparable<Employee> {
     private String name;
+    private int annualLeavesAtStart;
     private int annualLeaves;
     private boolean isAssigned;
     private String assigendTeamName;
@@ -10,6 +11,7 @@ public class Employee implements Comparable<Employee> {
     public Employee(String n, int yle) {
         this.name = n;
         this.annualLeaves = yle;
+        this.annualLeavesAtStart = yle;
         this.isAssigned = false;
         takenLeaave = new ArrayList<>();
     }
@@ -51,7 +53,7 @@ public class Employee implements Comparable<Employee> {
 
     @Override
     public String toString() {
-        return name + " (Entitled Annual Leaves: " + annualLeaves + " days)";
+        return name + " (Entitled Annual Leaves: " + annualLeavesAtStart + " days)";
     }
 
     public boolean isAssigned() {
@@ -113,5 +115,29 @@ public class Employee implements Comparable<Employee> {
         }
         System.out.println(out);
     }
+    public String printLeaveTM() {
+        String out = name + ": ";
+        boolean flag = false;
+        for (LeaveDay d : takenLeaave) {
+            int d1 = d.getDateComp();
+            int sDate = SystemDate.getInstance().getDateComp();
+            if (d1 >= sDate)
+                if (!flag) {
+                    out += d.getStartDay() + " to " + d.getEndDay();
+                    flag = true;
+                } else {
+                    out += ", " + d.getStartDay() + " to " + d.getEndDay();
+                }
+        }
+        if (out.length() == (name.length() + 2)) {
+            out += "--";
+        }
+       return out;
+    }
 
+    public static void list(ArrayList<Employee> allEmployees) {
+        for(Employee e : allEmployees){
+            System.out.println(e);
+        }
+    }
 }

@@ -9,7 +9,6 @@ import java.util.Collections;
  * @version 1.0
  */
 public class Company {
-    
     private ArrayList<Employee> allEmployees;
     private ArrayList<Team> allTeams;
     private ArrayList<Project> allProjects;
@@ -25,14 +24,9 @@ public class Company {
         return instance;
     }
 
-    public void listTeams() {
-        Team.list(allTeams);
-    }
 
-    public void listAllEmployees() {
-        for (Employee e : allEmployees) {
-            System.out.println(e.toString());
-        }
+    public void listEmployees(){
+        Employee.list(allEmployees);
     }
 
     public boolean checkEmployees(String name) {
@@ -44,22 +38,13 @@ public class Company {
         return false;
     }
 
-    public Employee getEmployee(String eName){
-        for (Employee e : allEmployees){
-            if (e.getName().equals(eName)){
+    public Employee getEmployee(String eName) {
+        for (Employee e : allEmployees) {
+            if (e.getName().equals(eName)) {
                 return e;
             }
-        } 
-        return null;
-    }
-
-    public boolean checkTeam(String name) {
-        for (Team t : allTeams) {
-            if (t.getTeamName().equals(name)) {
-                return true;
-            }
         }
-        return false;
+        return null;
     }
 
     public Employee createEmployee(String n, int al) throws EmployeeAlreadyExists {
@@ -72,6 +57,22 @@ public class Company {
             Collections.sort(allEmployees);
         }
         return e;
+    }
+
+    public void addEmployee(Employee e) throws EmployeeAlreadyExists {
+        allEmployees.add(e);
+        Collections.sort(allEmployees);
+    }
+
+    public void removeEmplyee(Employee e) throws EmployeeNotFound {
+        allEmployees.remove(e);
+    }
+
+    public void listAllLeaves() {
+        for (Employee e : allEmployees) {
+            e.printLeave();
+            System.out.println();
+        }
     }
 
     public Team createTeam(String name, String head) throws EmployeeNotFound, TeamAlreadyExistsEx, IsAlreadyAssignedEx {
@@ -97,6 +98,15 @@ public class Company {
         }
     }
 
+    public boolean checkTeam(String name) {
+        for (Team t : allTeams) {
+            if (t.getTeamName().equals(name)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public void addTeam(Team t) {
         allTeams.add(t);
         Collections.sort(allTeams);
@@ -106,13 +116,17 @@ public class Company {
         allTeams.remove(t);
     }
 
-    public void addEmployee(Employee e) throws EmployeeAlreadyExists {
-        allEmployees.add(e);
-        Collections.sort(allEmployees);
+    public Team findTeam(String string) {
+        for (Team t : allTeams) {
+            if (t.getTeamName().equals(string)) {
+                return t;
+            }
+        }
+        return null;
     }
 
-    public void removeEmplyee(Employee e) throws EmployeeNotFound {
-        allEmployees.remove(e);
+    public void listTeams() {
+        Team.list(allTeams);
     }
 
     public Project createProject(String string, String string2, String len) throws ProjectAlreadyExists {
@@ -130,34 +144,15 @@ public class Company {
     }
 
     public void listProjects() {
-        System.out.printf("%-9s%-13s%-13s%-13s\n",
-                "Project", "Start Day", "End Day", "Team");
-        for (Project p : allProjects) {
-            System.out.println(p);
-        }
+        Project.list(allProjects);
     }
 
-    public Project findProject(String string) {
-        for (Project p : allProjects) {
-            String pID = p.getProId();
-            if (pID.equals(string)) {
-                return p;
-            }
-        }
-        return null;
+    public Project findProject(String pID) {
+        return Project.find(allProjects, pID);
     }
 
     public boolean checkProject(String name) {
         return (findProject(name) != null);
-    }
-
-    public Team findTeam(String string) {
-        for (Team t : allTeams) {
-            if (t.getTeamName().equals(string)) {
-                return t;
-            }
-        }
-        return null;
     }
 
     public void removeProject(Project p) {
@@ -171,12 +166,5 @@ public class Company {
 
     public void unassign(Project p) {
         p.setTeamNull();
-    }
-
-    public void listAllLeaves(){
-        for (Employee e : allEmployees){
-                e.printLeave();
-                System.out.println();
-        }
     }
 }

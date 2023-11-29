@@ -41,6 +41,25 @@ public class Main {
                 } catch (InsufficientCommandArgumentsEx e) {
                     System.out.println(e);
                 }
+                if (cmdParts[0].equals("joinTeam"))
+                    try {
+                        (new CmdJoinTeam()).execute(cmdParts);
+                    } catch (InsufficientCommandArgumentsEx e) {
+                        // TODO Auto-generated catch block
+                        e.printStackTrace();
+                    } catch (EmployeeNotFound e) {
+                        // TODO Auto-generated catch block
+                        e.printStackTrace();
+                    } catch (TeamAlreadyExistsEx e) {
+                        // TODO Auto-generated catch block
+                        e.printStackTrace();
+                    } catch (ProjectNotFoundEx e) {
+                        // TODO Auto-generated catch block
+                        e.printStackTrace();
+                    } catch (TeamNotFoundEx e) {
+                        // TODO Auto-generated catch block
+                        e.printStackTrace();
+                    };
 
             if (cmdParts[0].equals("startNewDay"))
                 try {
@@ -78,6 +97,25 @@ public class Main {
                 (new CmdListEmployees()).execute(cmdParts);
             if (cmdParts[0].equals("listLeaves"))
                 (new CmdListLeaves()).execute(cmdParts);
+            if (cmdParts[0].equals("listTeamMembers"))
+                try {
+                    (new CmdListTeamMembers()).execute(cmdParts);
+                } catch (InsufficientCommandArgumentsEx e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                } catch (EmployeeNotFound e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                } catch (TeamAlreadyExistsEx e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                } catch (ProjectNotFoundEx e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                } catch (TeamNotFoundEx e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
 
             if (cmdParts[0].equals("undo"))
                 RecordedCommand.undoOneCommand();
