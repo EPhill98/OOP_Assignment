@@ -1,4 +1,4 @@
-public class LeaveDay extends Day {
+public class LeaveDay extends Day implements Comparable<LeaveDay>{
     private Day startDay;
     private Day endDay;
 
@@ -33,6 +33,19 @@ public class LeaveDay extends Day {
         }
 
         return Integer.parseInt(a + b + c);
+    }
+
+    @Override
+    public int compareTo(LeaveDay aDay) {
+        int thisDay = this.getDateComp();
+        int d2 = aDay.getDateComp();
+        if (thisDay > d2){
+            return 1;
+        } else if (thisDay == d2){
+            return 0;
+        } else {
+            return -1;
+        }
     }
 
 }

@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Employee implements Comparable<Employee> {
     private String name;
@@ -90,6 +91,7 @@ public class Employee implements Comparable<Employee> {
 
     public void addLeave(LeaveDay d) {
         this.takenLeaave.add(d);
+        Collections.sort(takenLeaave);
     }
 
     public void deleteLeave() {
@@ -116,7 +118,7 @@ public class Employee implements Comparable<Employee> {
         System.out.println(out);
     }
     public String printLeaveTM() {
-        String out = name + ": ";
+        String out = "";
         boolean flag = false;
         for (LeaveDay d : takenLeaave) {
             int d1 = d.getDateComp();
@@ -129,7 +131,7 @@ public class Employee implements Comparable<Employee> {
                     out += ", " + d.getStartDay() + " to " + d.getEndDay();
                 }
         }
-        if (out.length() == (name.length() + 2)) {
+        if (out.length()==0) {
             out += "--";
         }
        return out;

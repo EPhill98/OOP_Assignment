@@ -11,7 +11,7 @@ public class CmdJoinTeam extends RecordedCommand{
         t.addEmployee(e);
         addUndoCommand(this);
         clearRedoList();
-        System.out.println("Done");
+        System.out.println("Done.");
 
     }
 
