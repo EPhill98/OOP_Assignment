@@ -32,7 +32,13 @@ public class Day implements Cloneable{
     }
 
     public Day nextDay(){
+        if (valid(year, month, day+1)){
         return new Day(year,month,day+1);
+        } else if (valid(year, month+1, 1)){
+            return new Day(year,month+1, 1);
+        } else {
+            return new Day(year+1,1,1);
+        }
     }
     // check if a given year is a leap year
     static public boolean isLeapYear(int y) {

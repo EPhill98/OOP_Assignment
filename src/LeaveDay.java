@@ -21,6 +21,7 @@ public class LeaveDay extends Day implements Comparable<LeaveDay>{
     public void setEndDay(Day endDay) {
         this.endDay = endDay;
     }
+
     public int getDateComp(){
         String a = String.valueOf(endDay.getYear());
         String b = String.valueOf(endDay.getMonth());
@@ -28,6 +29,20 @@ public class LeaveDay extends Day implements Comparable<LeaveDay>{
             b = "0" + b;
         }
         String c = String.valueOf(endDay.getDay());
+        if (c.length() == 1){
+            c = "0" + c;
+        }
+
+        return Integer.parseInt(a + b + c);
+    }
+
+    public static int getDateComp(Day d){
+        String a = String.valueOf(d.getYear());
+        String b = String.valueOf(d.getMonth());
+        if (b.length() == 1){
+            b = "0" + b;
+        }
+        String c = String.valueOf(d.getDay());
         if (c.length() == 1){
             c = "0" + c;
         }

@@ -81,7 +81,15 @@ public class Main {
                     System.out.println(e);
                 }
             if (cmdParts[0].equals("takeLeave"))
-                new CmdTakeLeave().execute(cmdParts);
+                try {
+                    new CmdTakeLeave().execute(cmdParts);
+                } catch (InsufficientCommandArgumentsEx e) {
+                    System.out.println(e);
+                } catch (LeaveOverLappedEX e) {
+                    System.out.println(e);
+                } catch (InsufficientBallanceEx e) {
+                    System.out.println(e);
+                }
 
             if (cmdParts[0].equals("listProjects"))
                 (new CmdListProject()).execute(cmdParts);

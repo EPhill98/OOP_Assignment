@@ -142,4 +142,13 @@ public class Employee implements Comparable<Employee> {
             System.out.println(e);
         }
     }
+
+    public int getAnnualLeavesAtStart() {
+        return annualLeavesAtStart;
+    }
+
+    public void setAnnualLeavesAtStart(int annualLeavesAtStart) {
+        this.annualLeavesAtStart = annualLeavesAtStart;
+    }
+    
 }
