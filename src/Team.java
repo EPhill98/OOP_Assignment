@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Team implements Comparable<Team> {
     private String teamName;
@@ -42,6 +43,7 @@ public class Team implements Comparable<Team> {
 
     public void addEmployee(Employee e) {
         this.teamMembers.add(e);
+        Collections.sort(teamMembers);
     }
 
     public void removeEmployee(Employee e) {

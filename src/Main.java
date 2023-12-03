@@ -41,25 +41,21 @@ public class Main {
                 } catch (InsufficientCommandArgumentsEx e) {
                     System.out.println(e);
                 }
-                if (cmdParts[0].equals("joinTeam"))
-                    try {
-                        (new CmdJoinTeam()).execute(cmdParts);
-                    } catch (InsufficientCommandArgumentsEx e) {
-                        // TODO Auto-generated catch block
-                        e.printStackTrace();
-                    } catch (EmployeeNotFound e) {
-                        // TODO Auto-generated catch block
-                        e.printStackTrace();
-                    } catch (TeamAlreadyExistsEx e) {
-                        // TODO Auto-generated catch block
-                        e.printStackTrace();
-                    } catch (ProjectNotFoundEx e) {
-                        // TODO Auto-generated catch block
-                        e.printStackTrace();
-                    } catch (TeamNotFoundEx e) {
-                        // TODO Auto-generated catch block
-                        e.printStackTrace();
-                    };
+            if (cmdParts[0].equals("joinTeam"))
+                try {
+                    (new CmdJoinTeam()).execute(cmdParts);
+                } catch (InsufficientCommandArgumentsEx e) {
+                    System.out.println(e);
+                } catch (EmployeeNotFound e) {
+                    System.out.println(e);
+                } catch (TeamAlreadyExistsEx e) {
+                    System.out.println(e);
+                } catch (ProjectNotFoundEx e) {
+                    System.out.println(e);
+                } catch (TeamNotFoundEx e) {
+                    System.out.println(e);
+                }
+            ;
 
             if (cmdParts[0].equals("startNewDay"))
                 try {
@@ -101,20 +97,15 @@ public class Main {
                 try {
                     (new CmdListTeamMembers()).execute(cmdParts);
                 } catch (InsufficientCommandArgumentsEx e) {
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
+                    System.out.println(e);
                 } catch (EmployeeNotFound e) {
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
+                    System.out.println(e);
                 } catch (TeamAlreadyExistsEx e) {
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
+                    System.out.println(e);
                 } catch (ProjectNotFoundEx e) {
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
+                    System.out.println(e);
                 } catch (TeamNotFoundEx e) {
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
+                    System.out.println(e);
                 }
 
             if (cmdParts[0].equals("undo"))
