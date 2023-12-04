@@ -54,6 +54,8 @@ public class Main {
                     System.out.println(e);
                 } catch (TeamNotFoundEx e) {
                     System.out.println(e);
+                } catch (HasJoinedTeamEX e) {
+                    System.out.println(e);
                 }
             ;
 
